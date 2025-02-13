@@ -77,6 +77,7 @@ module.exports = function StateProvider(makeRenderer, rootElement, stateRouterOp
 		delete activeStateResolveContent[stateName]
 
 		return destroyDom(activeDomApis[stateName]).then(() => {
+            console.log('ON DESTROY');
 			delete activeDomApis[stateName]
 			stateProviderEmitter.emit('afterDestroyState', {
 				state,
